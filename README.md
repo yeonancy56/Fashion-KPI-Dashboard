@@ -122,9 +122,20 @@ Porting note: `strftime()` doesn't exist in PostgreSQL — use `TO_CHAR(order_da
 
 #### Answer:
 
-| month | revenue |
-| ----- | ------- |
-| ...   | ...     |
+| month   | revenue  |
+| ------- | --------- |
+| 2025-07 | 46,540.98 |
+| 2025-08 | 49,898.50 |
+| 2025-09 | 44,367.56 |
+| 2025-10 | 52,632.32 |
+| 2025-11 | 35,261.30 |
+| 2025-12 | 52,413.82 |
+| 2026-01 | 56,197.08 |
+| 2026-02 | 42,094.65 |
+| 2026-03 | 55,341.05 |
+| 2026-04 | 50,787.91 |
+| 2026-05 | 48,083.03 |
+| 2026-06 | 48,503.13 |
 
 - Revenue holds steadily in the **$45K–$56K** range across most months.
 - Revenue drops sharply to roughly **$35K in Nov 2025**, then rebounds to about **$55K in Dec** and peaks near **$56K in Mar 2026**.
@@ -187,9 +198,18 @@ LIMIT 10;
 
 #### Answer:
 
-| product_name | category | units_sold | revenue |
-| ------------ | -------- | ---------- | ------- |
-| ...          | ...      | ...        | ...     |
+| product_name   | category  | units_sold | revenue   |
+| -------------- | --------- | ---------- | --------- |
+| Puffer Jacket  | Outerwear | 223        | 38,167.30 |
+| Heeled Sandals | Footwear  | 325        | 36,023.38 |
+| Blazer         | Outerwear | 163        | 31,911.44 |
+| Ankle Boots    | Footwear  | 302        | 29,175.97 |
+| Parka          | Outerwear | 209        | 28,743.65 |
+| Sneakers       | Footwear  | 300        | 28,376.33 |
+| Slip Dress     | Dresses   | 312        | 27,432.15 |
+| Trench Coat    | Outerwear | 193        | 26,793.36 |
+| Wool Coat      | Outerwear | 171        | 26,536.91 |
+| Loafers        | Footwear  | 260        | 25,391.02 |
 
 - The top ten products are tightly bunched between **$25K and $38K**, led by the Puffer Jacket.
 - No single hit product is carrying the business. That's healthy from a risk standpoint, but it also means there's no obvious style to double down on.
@@ -257,9 +277,14 @@ ORDER BY margin_pct DESC;
 
 #### Answer:
 
-| category | revenue | gross_margin_dollars | margin_pct |
-| -------- | ------- | -------------------- | ---------- |
-| ...      | ...     | ...                  | ...        |
+| category    | revenue    | gross_margin_dollars | margin_pct |
+| ----------- | ---------- | -------------------- | ---------- |
+| Footwear    | 137,545.83 | 75,722.94            | 55.1       |
+| Dresses     | 109,269.90 | 59,095.61            | 54.1       |
+| Outerwear   | 152,152.66 | 82,011.68            | 53.9       |
+| Accessories | 56,154.77  | 29,999.24            | 53.4       |
+| Denim       | 81,353.17  | 43,031.93            | 52.9       |
+| Tops        | 45,645.00  | 24,039.59            | 52.7       |
 
 - *[Note the gap between the highest-revenue category and the highest-margin one — that gap is the entire reason this query exists.]*
 
@@ -286,9 +311,11 @@ ORDER BY return_rate_pct DESC;
 
 #### Answer:
 
-| category | return_rate_pct |
-| -------- | --------------- |
-| ...      | ...             |
+| category    | return_rate_pct |
+| ----------- | --------------- |
+| Outerwear   | 18.7            |
+| Denim       | 18.5            |
+| Footwear    | 17.2            |
 
 - Return rates cluster in a narrow **16–19%** band across every category.
 - No single category is an outlier, which suggests returns here are a structural cost of doing business rather than a product-quality problem in one area.
@@ -349,9 +376,16 @@ ORDER BY revenue DESC;
 
 #### Answer:
 
-| country | customers | revenue |
-| ------- | --------- | ------- |
-| ...     | ...       | ...     |
+| country        | customers | revenue    |
+| -------------- | --------- | ---------- |
+| United Kingdom | 281       | 183,736.40 |
+| United States  | 211       | 131,650.08 |
+| Germany        | 107       | 70,083.05  |
+| France         | 86        | 58,484.24  |
+| Canada         | 77        | 52,401.56  |
+| Australia      | 63        | 40,716.99  |
+| Netherlands    | 38        | 23,188.71  |
+| Sweden         | 35        | 21,860.30  |
 
 - The **US and UK** are the largest markets by revenue.
 - Smaller footprints elsewhere suggest room to expand rather than markets that have been tested and failed.
